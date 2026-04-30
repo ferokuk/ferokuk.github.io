@@ -20,7 +20,6 @@ export function Header({ profile, contacts, paths, ui }: HeaderProps) {
         <p className="hero__role">{profile.title}</p>
         <p className="hero__subtitle">{profile.subtitle}</p>
         <p className="hero__summary">{profile.summary}</p>
-        <p className="hero__target">{profile.target}</p>
       </div>
 
       <aside className="contact-card" aria-label={ui.contactTitle}>

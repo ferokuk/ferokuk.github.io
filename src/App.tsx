@@ -1,8 +1,6 @@
 import { Education } from "./components/Education";
 import { Experience } from "./components/Experience";
-import { FooterCta } from "./components/FooterCta";
 import { Header } from "./components/Header";
-import { Metrics } from "./components/Metrics";
 import { PublicProject } from "./components/PublicProject";
 import { Stack } from "./components/Stack";
 import type { CvData } from "./data/cv";
@@ -22,8 +20,6 @@ export default function App({ cv }: AppProps) {
           ui={cv.ui}
         />
 
-        <Metrics metrics={cv.metrics} />
-
         <div className="layout">
           <div className="main-column">
             <Experience items={cv.experience} title={cv.ui.experienceTitle} stackLabel={cv.ui.techStackLabel} />
@@ -40,8 +36,6 @@ export default function App({ cv }: AppProps) {
             />
           </aside>
         </div>
-
-        <FooterCta contacts={cv.contacts} target={cv.profile.target} paths={cv.paths} ui={cv.ui} />
       </main>
     </div>
   );

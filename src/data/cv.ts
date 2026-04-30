@@ -15,13 +15,6 @@ export type ProfileData = {
   location: string;
   eyebrow: string;
   summary: string;
-  target: string;
-};
-
-export type Metric = {
-  value: string;
-  label: string;
-  note: string;
 };
 
 export type ExperienceItem = {
@@ -77,7 +70,6 @@ export type CvUiData = {
   projectsTitle: string;
   educationTitle: string;
   languageLabel: string;
-  footerTitle: string;
   resumeLinkLabel: string;
   printPageLabel: string;
   mainSiteLabel: string;
@@ -99,7 +91,6 @@ export type CvData = {
   paths: CvPaths;
   profile: ProfileData;
   contacts: ContactItem[];
-  metrics: Metric[];
   experience: ExperienceItem[];
   stack: StackGroup[];
   projects: ProjectData[];
@@ -151,7 +142,6 @@ export const cvRu: CvData = {
     projectsTitle: "Публичный проект",
     educationTitle: "Образование",
     languageLabel: "Язык",
-    footerTitle: "Контакты для обсуждения backend-задач",
     resumeLinkLabel: "Resume",
     printPageLabel: "Print page",
     mainSiteLabel: "Main site",
@@ -183,7 +173,6 @@ export const cvRu: CvData = {
     eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
     summary:
       "Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объёмы данных и обеспечивают стабильную работу продуктовых систем в production.",
-    target: "Цель: backend-команды в fintech, platform, product",
   },
   contacts: [
     {
@@ -206,28 +195,6 @@ export const cvRu: CvData = {
       value: "gneushevyar@mail.ru",
       href: "mailto:gneushevyar@mail.ru",
       ariaLabel: "Написать Ярославу Гнеушеву на email",
-    },
-  ],
-  metrics: [
-    {
-      value: "5×",
-      label: "скорость обработки счетов",
-      note: "Celery, Redis, N+1",
-    },
-    {
-      value: "4–6s → 200ms",
-      label: "время ответа API",
-      note: "асинхронный платежный pipeline",
-    },
-    {
-      value: "25s+ → 2s",
-      label: "оптимизация отчетов",
-      note: "PostgreSQL, индексы, mat. views",
-    },
-    {
-      value: "65–70%",
-      label: "покрытие тестами",
-      note: "интеграционные сценарии",
     },
   ],
   experience: [
@@ -335,7 +302,6 @@ export const cvEn: CvData = {
     projectsTitle: "Public project",
     educationTitle: "Education",
     languageLabel: "Language",
-    footerTitle: "Contacts for backend opportunities",
     resumeLinkLabel: "Resume",
     printPageLabel: "Print page",
     mainSiteLabel: "Main site",
@@ -367,7 +333,6 @@ export const cvEn: CvData = {
     eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
     summary:
       "Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.",
-    target: "Target: backend teams in fintech, platform, product",
   },
   contacts: [
     {
@@ -390,28 +355,6 @@ export const cvEn: CvData = {
       value: "gneushevyar@mail.ru",
       href: "mailto:gneushevyar@mail.ru",
       ariaLabel: "Email Yaroslav Gneushev",
-    },
-  ],
-  metrics: [
-    {
-      value: "5×",
-      label: "invoice processing speed",
-      note: "Celery, Redis, N+1",
-    },
-    {
-      value: "4–6s → 200ms",
-      label: "API response time",
-      note: "async payment pipeline",
-    },
-    {
-      value: "25s+ → 2s",
-      label: "report optimization",
-      note: "PostgreSQL, indexes, mat. views",
-    },
-    {
-      value: "65–70%",
-      label: "test coverage",
-      note: "integration scenarios",
     },
   ],
   experience: [
