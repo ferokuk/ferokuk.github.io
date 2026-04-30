@@ -7,7 +7,6 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "..");
 const sourcePath = path.join(repoRoot, "src", "data", "cv.ts");
 const tempDir = path.join(repoRoot, ".tmp", "resume-txt");
-const outputPath = path.join(repoRoot, "public", "files", "Yaroslav_Gneushev_Python_Backend_CV.txt");
 
 function getContact(cv, kind) {
   const contact = cv.contacts.find((item) => item.kind === kind);
@@ -33,14 +32,14 @@ function buildResumeText(cv) {
     cv.profile.location,
     `Email: ${email.value} | Telegram: ${telegram.value} | GitHub: ${github.value}`,
     "",
-    "Profile",
+    cv.ui.profileTitle,
     cv.profile.summary,
     "",
-    "Technical Skills",
+    cv.ui.technicalSkillsTitle,
     ...cv.stack.map((group) => `${group.resumeTitle}: ${group.items.join(", ")}`),
-    `Additional: ${cv.additionalSkills.join(", ")}`,
+    `${cv.ui.additionalTitle}: ${cv.additionalSkills.join(", ")}`,
     "",
-    "Experience",
+    cv.ui.experienceResumeTitle,
     "",
   ];
 
@@ -48,28 +47,28 @@ function buildResumeText(cv) {
     lines.push(
       `${getCompanyName(job.company)} — ${job.role}`,
       job.period,
-      `Context: ${job.context}`,
+      `${cv.ui.contextLabel}: ${job.context}`,
       ...job.bullets.map((bullet) => `- ${bullet}`),
-      `Tech stack: ${job.techStack.join(", ")}`,
+      `${cv.ui.techStackLabel}: ${job.techStack.join(", ")}`,
       "",
     );
   }
 
   if (cv.projects.length > 0) {
-    lines.push("Projects", "");
+    lines.push(cv.ui.projectsResumeTitle, "");
 
     for (const project of cv.projects) {
       lines.push(project.title, `GitHub: ${project.linkText}`, project.text, "");
     }
   }
 
-  lines.push("Education", "");
+  lines.push(cv.ui.educationResumeTitle, "");
 
   for (const item of cv.education) {
     lines.push(item.institution, item.program, "");
   }
 
-  lines.push("Additional", "");
+  lines.push(cv.ui.additionalTitle, "");
 
   for (const language of cv.languages) {
     lines.push(`${language.name}: ${language.level}`);
@@ -105,11 +104,16 @@ fs.mkdirSync(tempDir, { recursive: true });
 const tempModulePath = path.join(tempDir, `cv-${Date.now()}.mjs`);
 fs.writeFileSync(tempModulePath, result.outputText, "utf8");
 
-const { cv } = await import(pathToFileURL(tempModulePath).href);
-const resumeText = buildResumeText(cv);
+const { cvRu, cvEn } = await import(pathToFileURL(tempModulePath).href);
+const cvList = [cvRu, cvEn];
 
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, `\uFEFF${resumeText}`, "utf8");
+for (const cv of cvList) {
+  const outputPath = path.join(repoRoot, "public", cv.paths.resumeTxtHref.replace(/^\//, ""));
+  const resumeText = buildResumeText(cv);
+
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, `\uFEFF${resumeText}`, "utf8");
+  console.log(`Generated ${path.relative(repoRoot, outputPath)}`);
+}
+
 fs.rmSync(tempDir, { recursive: true, force: true });
-
-console.log(`Generated ${path.relative(repoRoot, outputPath)}`);

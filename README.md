@@ -19,7 +19,12 @@ npm install
 npm run dev
 ```
 
-Vite will print the local URL in the terminal. The main page is available at `/`, and the printable resume is available at `/resume.html`.
+Vite will print the local URL in the terminal.
+
+- Russian site: `/`
+- English site: `/en/`
+- Russian printable resume: `/resume.html`
+- English printable resume: `/en/resume.html`
 
 ## Checks
 
@@ -33,7 +38,12 @@ The production build is generated in `dist/`.
 
 ## Updating CV Content
 
-The shared source of truth for the React pages is `src/data/cv.ts`. Update profile text, contacts, metrics, experience, stack, projects, education, and languages there.
+The shared source of truth for both locales is `src/data/cv.ts`. Update profile text, contacts, metrics, experience, stack, projects, education, and languages there. The project uses separate URLs for language versions instead of runtime language detection:
+
+- `/` and `/resume.html` for Russian
+- `/en/` and `/en/resume.html` for English
+
+This keeps GitHub Pages deployment simple, avoids a routing dependency, and lets each language page have its own HTML metadata and `hreflang` links.
 
 The plain TXT resume is generated from the same data source:
 
@@ -41,11 +51,14 @@ The plain TXT resume is generated from the same data source:
 npm run generate:resume-txt
 ```
 
-`npm run build` runs this generation step automatically and writes `public/files/Yaroslav_Gneushev_Python_Backend_CV.txt`.
+`npm run build` runs this generation step automatically and writes:
+
+- `public/files/Yaroslav_Gneushev_Python_Backend_CV.txt`
+- `public/files/Yaroslav_Gneushev_Python_Backend_CV_EN.txt`
 
 ## Resume PDF Export
 
-Open `/resume.html`, then use the browser print dialog and choose “Save as PDF”. The project intentionally does not generate PDFs automatically and does not include Puppeteer, Playwright, react-pdf, or server-side PDF tooling.
+Open `/resume.html` or `/en/resume.html`, then use the browser print dialog and choose “Save as PDF”. The project intentionally does not generate PDFs automatically and does not include Puppeteer, Playwright, react-pdf, or server-side PDF tooling.
 
 ## GitHub Pages
 

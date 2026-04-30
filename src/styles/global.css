@@ -197,10 +197,24 @@ ul {
   border-radius: var(--radius-card);
 }
 
+.contact-card__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+
 .contact-card__title {
   color: var(--color-text);
   font-size: 0.86rem;
   font-weight: 750;
+}
+
+.language-switch {
+  color: var(--color-blue);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .contact-card__body {
@@ -764,6 +778,7 @@ a.contact-row__value {
   }
 
   .contact-card__title,
+  .language-switch,
   .contact-row__label,
   .contact-row__value {
     font-size: 8px;

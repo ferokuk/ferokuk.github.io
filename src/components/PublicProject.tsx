@@ -3,16 +3,17 @@ import { SectionTitle } from "./SectionTitle";
 
 type PublicProjectProps = {
   projects: ProjectData[];
+  title: string;
 };
 
-export function PublicProject({ projects }: PublicProjectProps) {
+export function PublicProject({ projects, title }: PublicProjectProps) {
   if (projects.length === 0) {
     return null;
   }
 
   return (
     <section className="side-section public-project" aria-labelledby="project-title">
-      <SectionTitle id="project-title" title="Публичный проект" />
+      <SectionTitle id="project-title" title={title} />
 
       <div className="project-list">
         {projects.map((project) => (
