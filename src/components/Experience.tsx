@@ -4,12 +4,14 @@ import { SectionTitle } from "./SectionTitle";
 
 type ExperienceProps = {
   items: ExperienceItem[];
+  title: string;
+  stackLabel: string;
 };
 
-export function Experience({ items }: ExperienceProps) {
+export function Experience({ items, title, stackLabel }: ExperienceProps) {
   return (
     <section className="experience" aria-labelledby="experience-title">
-      <SectionTitle id="experience-title" title="Опыт" />
+      <SectionTitle id="experience-title" title={title} />
 
       <div className="experience-list">
         {items.map((item) => (
@@ -30,7 +32,7 @@ export function Experience({ items }: ExperienceProps) {
               ))}
             </ul>
 
-            <div className="experience-card__stack" aria-label={`Стек: ${item.company}`}>
+            <div className="experience-card__stack" aria-label={`${stackLabel}: ${item.company}`}>
               {item.techStack.map((technology) => (
                 <Chip key={technology}>{technology}</Chip>
               ))}

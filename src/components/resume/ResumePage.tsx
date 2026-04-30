@@ -1,8 +1,7 @@
-import { cv } from "../../data/cv";
-import type { ContactItem } from "../../data/cv";
+import type { ContactItem, CvData } from "../../data/cv";
 import { ResumeSection } from "./ResumeSection";
 
-function getContact(kind: ContactItem["kind"]) {
+function getContact(cv: CvData, kind: ContactItem["kind"]) {
   const contact = cv.contacts.find((item) => item.kind === kind);
 
   if (!contact) {
@@ -16,10 +15,14 @@ function getCompanyName(company: string) {
   return company.split(" · ")[0];
 }
 
-export function ResumePage() {
-  const email = getContact("email");
-  const telegram = getContact("telegram");
-  const github = getContact("github");
+type ResumePageProps = {
+  cv: CvData;
+};
+
+export function ResumePage({ cv }: ResumePageProps) {
+  const email = getContact(cv, "email");
+  const telegram = getContact(cv, "telegram");
+  const github = getContact(cv, "github");
 
   const handlePrint = () => {
     window.print();
@@ -28,10 +31,13 @@ export function ResumePage() {
   return (
     <main className="resume-page">
       <div className="resume-toolbar" aria-label="Resume actions">
-        <a href="/">Main site</a>
-        <a href="/files/Yaroslav_Gneushev_Python_Backend_CV.txt">Download TXT</a>
+        <a href={cv.paths.homeHref}>{cv.ui.mainSiteLabel}</a>
+        <a href={cv.paths.alternateResumeHref} hrefLang={cv.paths.alternateLocale}>
+          {cv.paths.alternateLanguageLabel}
+        </a>
+        <a href={cv.paths.resumeTxtHref}>{cv.ui.downloadTxtLabel}</a>
         <button type="button" onClick={handlePrint}>
-          Print / Save as PDF
+          {cv.ui.printSavePdfLabel}
         </button>
       </div>
 
@@ -56,11 +62,11 @@ export function ResumePage() {
           </p>
         </header>
 
-        <ResumeSection id="profile" title="Profile">
+        <ResumeSection id="profile" title={cv.ui.profileTitle}>
           <p>{cv.profile.summary}</p>
         </ResumeSection>
 
-        <ResumeSection id="technical-skills" title="Technical Skills">
+        <ResumeSection id="technical-skills" title={cv.ui.technicalSkillsTitle}>
           <div className="resume-lines">
             {cv.stack.map((group) => (
               <p key={group.title}>
@@ -68,12 +74,12 @@ export function ResumePage() {
               </p>
             ))}
             <p>
-              <strong>Additional:</strong> {cv.additionalSkills.join(", ")}
+              <strong>{cv.ui.additionalTitle}:</strong> {cv.additionalSkills.join(", ")}
             </p>
           </div>
         </ResumeSection>
 
-        <ResumeSection id="experience" title="Experience">
+        <ResumeSection id="experience" title={cv.ui.experienceResumeTitle}>
           <div className="resume-jobs">
             {cv.experience.map((job) => (
               <article className="resume-job" key={`${job.company}-${job.period}`}>
@@ -82,7 +88,7 @@ export function ResumePage() {
                 </h3>
                 <p>{job.period}</p>
                 <p>
-                  <strong>Context:</strong> {job.context}
+                  <strong>{cv.ui.contextLabel}:</strong> {job.context}
                 </p>
                 <ul>
                   {job.bullets.map((bullet) => (
@@ -90,7 +96,7 @@ export function ResumePage() {
                   ))}
                 </ul>
                 <p>
-                  <strong>Tech stack:</strong> {job.techStack.join(", ")}
+                  <strong>{cv.ui.techStackLabel}:</strong> {job.techStack.join(", ")}
                 </p>
               </article>
             ))}
@@ -98,7 +104,7 @@ export function ResumePage() {
         </ResumeSection>
 
         {cv.projects.length > 0 ? (
-          <ResumeSection id="projects" title="Projects">
+          <ResumeSection id="projects" title={cv.ui.projectsResumeTitle}>
             {cv.projects.map((project) => (
               <article className="resume-project" key={project.title}>
                 <h3>{project.title}</h3>
@@ -114,7 +120,7 @@ export function ResumePage() {
           </ResumeSection>
         ) : null}
 
-        <ResumeSection id="education" title="Education">
+        <ResumeSection id="education" title={cv.ui.educationResumeTitle}>
           <div className="resume-lines">
             {cv.education.map((item) => (
               <article key={item.institution}>
@@ -125,7 +131,7 @@ export function ResumePage() {
           </div>
         </ResumeSection>
 
-        <ResumeSection id="additional" title="Additional">
+        <ResumeSection id="additional" title={cv.ui.additionalTitle}>
           {cv.languages.map((language) => (
             <p key={language.name}>
               {language.name}: {language.level}

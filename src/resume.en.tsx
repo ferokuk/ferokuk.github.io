@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ResumePage } from "./components/resume/ResumePage";
-import { cvRu } from "./data/cv";
+import { cvEn } from "./data/cv";
 import "./styles/resume.css";
 
 ReactDOM.createRoot(document.getElementById("resume-root") as HTMLElement).render(
   <React.StrictMode>
-    <ResumePage cv={cvRu} />
+    <ResumePage cv={cvEn} />
   </React.StrictMode>,
 );

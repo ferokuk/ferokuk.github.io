@@ -8,6 +8,8 @@ export default defineConfig({
       input: {
         main: "index.html",
         resume: "resume.html",
+        en: "en/index.html",
+        "en-resume": "en/resume.html",
       },
     },
   },

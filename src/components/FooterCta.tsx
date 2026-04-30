@@ -1,11 +1,13 @@
-import type { ContactItem } from "../data/cv";
+import type { ContactItem, CvPaths, CvUiData } from "../data/cv";
 
 type FooterCtaProps = {
   contacts: ContactItem[];
   target: string;
+  paths: CvPaths;
+  ui: CvUiData;
 };
 
-export function FooterCta({ contacts, target }: FooterCtaProps) {
+export function FooterCta({ contacts, target, paths, ui }: FooterCtaProps) {
   const github = contacts.find((contact) => contact.kind === "github");
   const email = contacts.find((contact) => contact.kind === "email");
   const contactActions = [github, email].filter((contact): contact is ContactItem => Boolean(contact));
@@ -15,9 +17,9 @@ export function FooterCta({ contacts, target }: FooterCtaProps) {
   };
 
   return (
-    <footer className="footer-cta" aria-label="Связь">
+    <footer className="footer-cta" aria-label={ui.footerTitle}>
       <div>
-        <h2>Контакты для обсуждения backend-задач</h2>
+        <h2>{ui.footerTitle}</h2>
         <p>{target}</p>
       </div>
 
@@ -33,9 +35,9 @@ export function FooterCta({ contacts, target }: FooterCtaProps) {
             {contact.label}
           </a>
         ))}
-        <a href="/resume.html">Resume</a>
+        <a href={paths.resumeHref}>{ui.resumeLinkLabel}</a>
         <button type="button" onClick={handlePrint}>
-          Print page
+          {ui.printPageLabel}
         </button>
       </div>
     </footer>

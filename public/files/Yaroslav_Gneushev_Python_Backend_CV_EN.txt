@@ -1,0 +1,58 @@
+﻿Yaroslav Gneushev
+Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production
+Moscow · remote / hybrid
+Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
+
+Profile
+Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.
+
+Technical Skills
+Backend: Python, Django, DRF, FastAPI, Flask, SQLAlchemy
+Data: PostgreSQL, Redis, SQL, Pandas, NumPy
+Async: Celery, RabbitMQ, Kafka, Outbox
+Infrastructure: Docker, Kubernetes, Nginx, Linux, GitLab CI
+Quality: pytest, Prometheus, Grafana, Ruff, Mypy
+Additional: REST API, CI/CD, Prometheus metrics, Grafana dashboards
+
+Experience
+
+SOGAZ — Backend Python Developer
+Jul 2025 — Present
+Context: Backend platform for invoice processing and antifraud checks in the insurance domain.
+- Developed backend antifraud systems: detection rules, invoice processing pipeline, and ML scoring integration through REST API.
+- Moved heavy operations to Celery, added Redis caching, fixed N+1 queries; invoice processing became up to 5× faster.
+- Migrated the platform from Python 3.9 to 3.12 and Django 3.2 to 5.2, updated dependencies, and stabilized production.
+- Added integration tests for antifraud rules, invoice validation, ML service, and external APIs; key backend code coverage reached 70%.
+- Set up Prometheus/Grafana metrics, dashboards, and alerts for technical and business scenarios.
+Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, Docker, Kubernetes, pytest, Prometheus, Grafana
+
+Fintech startup — Python Developer
+May 2024 — Jun 2025
+Context: Payment platform for merchants: payments, refunds, statuses, webhooks, and payment gateway integration.
+- Developed backend for a payment platform: payment creation, statuses, refunds, webhooks, and payment gateway integration.
+- Implemented idempotency with Redis SET NX and moved payment processing to Celery + Redis; API response time dropped from 4–6s to ~200ms.
+- Optimized PostgreSQL queries using EXPLAIN ANALYZE, composite/partial indexes, and materialized views; reports improved from 25s+ to ~2s.
+- Built an event-driven analytics pipeline on Kafka with the outbox pattern; analytics delay dropped from one day to tens of seconds.
+- Extracted a notification service on FastAPI + RabbitMQ: webhooks, email, DLQ, retries with exponential backoff.
+Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, GitLab CI, pytest, Prometheus, Grafana
+
+CIARS — Python Developer
+Dec 2022 — May 2024
+Context: Analytics and automation systems for transport monitoring, document parsing, and data processing.
+- Developed backend and analytical interfaces for a transport monitoring system on Flask/Dash.
+- Built an ETL pipeline for processing 1TB+ of text data with storage and search in PostgreSQL.
+- Developed a parser for 50,000+ EGRUL/EGRIP documents with PDF data extraction and rate limit/CAPTCHA handling.
+- Prepared 100,000+ product items from B2B catalogs for analytical models.
+Tech stack: Python, Flask, Dash, Pandas, SQLAlchemy, PostgreSQL, SQLite, Selenium, Docker, Linux
+
+Education
+
+Financial University under the Government of the Russian Federation
+Applied Information Systems in Economics and Finance · 2028
+
+College of Informatics and Programming
+Computer Systems Programming · 2024
+
+Additional
+
+English: B2

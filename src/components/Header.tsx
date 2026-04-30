@@ -1,11 +1,13 @@
-import type { ContactItem, ProfileData } from "../data/cv";
+import type { ContactItem, CvPaths, CvUiData, ProfileData } from "../data/cv";
 
 type HeaderProps = {
   profile: ProfileData;
   contacts: ContactItem[];
+  paths: CvPaths;
+  ui: CvUiData;
 };
 
-export function Header({ profile, contacts }: HeaderProps) {
+export function Header({ profile, contacts, paths, ui }: HeaderProps) {
   const handlePrint = () => {
     window.print();
   };
@@ -21,11 +23,16 @@ export function Header({ profile, contacts }: HeaderProps) {
         <p className="hero__target">{profile.target}</p>
       </div>
 
-      <aside className="contact-card" aria-label="Контакты">
-        <p className="contact-card__title">Контакты</p>
+      <aside className="contact-card" aria-label={ui.contactTitle}>
+        <div className="contact-card__top">
+          <p className="contact-card__title">{ui.contactTitle}</p>
+          <a className="language-switch" href={paths.alternateHref} hrefLang={paths.alternateLocale}>
+            {paths.alternateLanguageLabel}
+          </a>
+        </div>
         <address className="contact-card__body">
           <div className="contact-row">
-            <span className="contact-row__label">Локация</span>
+            <span className="contact-row__label">{ui.locationLabel}</span>
             <span className="contact-row__value">{profile.location}</span>
           </div>
 
@@ -46,11 +53,11 @@ export function Header({ profile, contacts }: HeaderProps) {
         </address>
 
         <div className="contact-card__actions">
-          <a className="contact-action" href="/resume.html">
-            Resume
+          <a className="contact-action" href={paths.resumeHref}>
+            {ui.resumeLinkLabel}
           </a>
           <button className="contact-action contact-action--button" type="button" onClick={handlePrint}>
-            Print page
+            {ui.printPageLabel}
           </button>
         </div>
       </aside>

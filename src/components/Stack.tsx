@@ -4,12 +4,13 @@ import { SectionTitle } from "./SectionTitle";
 
 type StackProps = {
   groups: StackGroup[];
+  title: string;
 };
 
-export function Stack({ groups }: StackProps) {
+export function Stack({ groups, title }: StackProps) {
   return (
     <section className="side-section stack" aria-labelledby="stack-title">
-      <SectionTitle id="stack-title" title="Стек" />
+      <SectionTitle id="stack-title" title={title} />
 
       <div className="stack-list">
         {groups.map((group) => (
