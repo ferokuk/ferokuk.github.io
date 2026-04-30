@@ -18,30 +18,38 @@ export function Header({ profile, contacts, paths, ui, theme, onThemeToggle }: H
 
   return (
     <header className="hero">
+      <div className="hero__controls">
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={onThemeToggle}
+          aria-label={`${ui.themeToggleLabel}: ${nextThemeLabel}`}
+        >
+          {nextThemeLabel}
+        </button>
+        <a className="language-switch" href={paths.alternateHref} hrefLang={paths.alternateLocale}>
+          {paths.alternateLanguageLabel}
+        </a>
+      </div>
+
       <div className="hero__content">
         <p className="hero__eyebrow">{profile.eyebrow}</p>
         <h1>{profile.name}</h1>
         <p className="hero__role">{profile.title}</p>
-        <p className="hero__subtitle">{profile.subtitle}</p>
+        <div className="hero__highlights" aria-label={profile.subtitle}>
+          {profile.stackHighlights.map((item) => (
+            <span className="hero__stack-pill" key={item}>
+              {item}
+            </span>
+          ))}
+          <span className="hero__experience-pill">{profile.experienceHighlight}</span>
+        </div>
         <p className="hero__summary">{profile.summary}</p>
       </div>
 
       <aside className="contact-card" aria-label={ui.contactTitle}>
         <div className="contact-card__top">
           <p className="contact-card__title">{ui.contactTitle}</p>
-          <div className="contact-card__switches">
-            <button
-              className="theme-toggle"
-              type="button"
-              onClick={onThemeToggle}
-              aria-label={`${ui.themeToggleLabel}: ${nextThemeLabel}`}
-            >
-              {nextThemeLabel}
-            </button>
-            <a className="language-switch" href={paths.alternateHref} hrefLang={paths.alternateLocale}>
-              {paths.alternateLanguageLabel}
-            </a>
-          </div>
         </div>
         <div className="contact-card__actions">
           <a className="contact-action" href={paths.resumeHref}>

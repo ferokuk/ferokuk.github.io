@@ -1,10 +1,10 @@
 ﻿Ярослав Гнеушев
-Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ года коммерческого опыта
-Москва / remote / hybrid
+Python Backend Developer | Django, FastAPI, PostgreSQL, Redis, Celery | 3+ года коммерческого опыта
+Москва, удаленно, гибрид
 Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
 
 Профиль
-Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.
+Python backend-разработчик с опытом разработки backend-систем в страховании, финтехе и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.
 
 Технические навыки
 Backend: Python, Django, DRF, FastAPI, Flask, SQLAlchemy
@@ -26,14 +26,14 @@ Quality: pytest, Prometheus, Grafana, Ruff, Mypy
 - Настроил Prometheus/Grafana-метрики, дашборды и алерты по техническим и бизнес-сценариям.
 Стек: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, Docker, Kubernetes, pytest, Prometheus, Grafana
 
-Fintech startup - Python Developer
+Финтех-стартап - Python Developer
 май 2024 - июнь 2025
 Контекст: Платежная платформа для мерчантов: платежи, рефанды, статусы, webhooks, интеграция с платежным шлюзом.
 - Разрабатывал backend платежной платформы: создание платежей, статусы, рефанды, webhooks, интеграция с платежным шлюзом.
 - Реализовал идемпотентность через Redis SET NX и перевел обработку платежей в Celery + Redis; время ответа API снизилось с 4-6s до ~200ms.
-- Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и materialized views; отчеты ускорились с 25s+ до ~2s.
-- Собрал event-driven analytics pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.
-- Выделил notification-service на FastAPI + RabbitMQ: webhooks, email, DLQ, retry с exponential backoff.
+- Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и материализованные представления; отчеты ускорились с 25s+ до ~2s.
+- Собрал event-driven аналитический pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.
+- Выделил сервис уведомлений на FastAPI + RabbitMQ: webhooks, email, DLQ, повторы с exponential backoff.
 Стек: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, GitLab CI, pytest, Prometheus, Grafana
 
 ЦИАРС - Python Developer
