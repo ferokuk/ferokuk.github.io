@@ -303,17 +303,32 @@ a.contact-row__value {
   font-size: 0.95rem;
 }
 
+.experience {
+  min-width: 0;
+  padding: var(--space-5);
+  background: rgba(16, 27, 45, 0.76);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
 .experience-list {
   display: grid;
-  gap: var(--space-4);
+  gap: 0;
 }
 
 .experience-card {
   min-width: 0;
-  padding: var(--space-5);
-  background: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.experience-card:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.experience-card:last-child {
+  padding-bottom: 0;
 }
 
 .experience-card__header {
@@ -627,13 +642,19 @@ a.contact-row__value {
   }
 
   .contact-card,
-  .experience-card,
+  .experience,
   .side-section {
     break-inside: avoid;
     padding: 2.2mm;
     background: #ffffff;
     border-color: #d9e2ef;
     border-radius: 5px;
+  }
+
+  .experience-card {
+    break-inside: avoid;
+    padding: 2mm 0;
+    border-color: #d9e2ef;
   }
 
   .contact-card__body {
