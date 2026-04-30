@@ -1,0 +1,58 @@
+﻿Ярослав Гнеушев
+Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production
+Москва · remote / hybrid
+Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
+
+Profile
+Backend-разработчик с 3+ годами production-опыта в страховании, fintech и аналитических системах. Фокус: платежные и антифрод-пайплайны, PostgreSQL-оптимизация, асинхронная обработка, мониторинг и тестируемая архитектура.
+
+Technical Skills
+Backend: Python, Django, DRF, FastAPI, Flask, SQLAlchemy
+Data: PostgreSQL, Redis, SQL, Pandas, NumPy
+Async: Celery, RabbitMQ, Kafka, Outbox
+Infrastructure: Docker, Kubernetes, Nginx, Linux, GitLab CI
+Quality: pytest, Prometheus, Grafana, Ruff, Mypy
+Additional: REST API, CI/CD, Prometheus metrics, Grafana dashboards
+
+Experience
+
+СОГАЗ — Backend Python Developer
+Jul 2025 — Present
+Context: Backend-платформа обработки счетов и антифрод-проверок в страховом домене.
+- Развивал backend антифрод-системы: правила детекции, pipeline обработки счетов, интеграция ML-скоринга через REST API.
+- Вынес тяжелые операции в Celery, добавил Redis-кеширование, исправил N+1-запросы; обработка счетов ускорилась до 5×.
+- Провел миграцию платформы: Python 3.9 → 3.12, Django 3.2 → 5.2, обновление зависимостей и стабилизация production.
+- Добавил интеграционные тесты для антифрод-правил, валидации счетов, ML-сервиса и внешних API; покрытие ключевого backend-кода — до 70%.
+- Настроил Prometheus/Grafana-метрики, дашборды и алерты по техническим и бизнес-сценариям.
+Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, Docker, Kubernetes, pytest, Prometheus, Grafana
+
+Fintech startup — Python Developer
+May 2024 — Jun 2025
+Context: Платежная платформа для мерчантов: платежи, рефанды, статусы, webhooks, интеграция с платежным шлюзом.
+- Разрабатывал backend платежной платформы: создание платежей, статусы, рефанды, webhooks, интеграция с платежным шлюзом.
+- Реализовал идемпотентность через Redis SET NX и перевел обработку платежей в Celery + Redis; время ответа API снизилось с 4–6s до ~200ms.
+- Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и materialized views; отчеты ускорились с 25s+ до ~2s.
+- Собрал event-driven analytics pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.
+- Выделил notification-service на FastAPI + RabbitMQ: webhooks, email, DLQ, retry с exponential backoff.
+Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, GitLab CI, pytest, Prometheus, Grafana
+
+ЦИАРС — Python Developer
+Dec 2022 — May 2024
+Context: Аналитические и автоматизационные системы для мониторинга перевозок, парсинга документов и обработки данных.
+- Разрабатывал backend и аналитические интерфейсы для системы мониторинга перевозок на Flask/Dash.
+- Собрал ETL-пайплайн для обработки 1TB+ текстовых данных с хранением и поиском в PostgreSQL.
+- Разработал парсер 50 000+ документов ЕГРЮЛ/ЕГРИП с извлечением данных из PDF и обходом rate limits/CAPTCHA.
+- Подготовил 100 000+ товарных позиций из B2B-каталогов для аналитических моделей.
+Tech stack: Python, Flask, Dash, Pandas, SQLAlchemy, PostgreSQL, SQLite, Selenium, Docker, Linux
+
+Education
+
+Финансовый университет при Правительстве РФ
+Прикладные информационные системы в экономике и финансах · 2028
+
+Колледж информатики и программирования
+Программирование в компьютерных системах · 2024
+
+Additional
+
+English: B2

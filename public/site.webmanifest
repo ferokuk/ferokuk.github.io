@@ -1,0 +1,15 @@
+{
+  "name": "Ярослав Гнеушев - Python Backend Developer",
+  "short_name": "Yaroslav CV",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111F",
+  "theme_color": "#07111F",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
