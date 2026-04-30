@@ -1,14 +1,18 @@
 :root {
-  --bg: #07111f;
-  --panel: #0b1627;
-  --card: #101b2d;
-  --chip: #14243a;
-  --border: #2b3a55;
-  --text: #f8fafc;
-  --muted: #bac7d9;
-  --muted-strong: #95a3b8;
-  --blue: #8fb5ff;
-  --green: #a7f3d0;
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --card: #ffffff;
+  --section: #ffffff;
+  --chip: #edf4ff;
+  --border: #d9e2ef;
+  --text: #0f172a;
+  --muted: #475467;
+  --muted-strong: #667085;
+  --blue: #2563eb;
+  --green: #047857;
+  --shell-border: rgba(37, 99, 235, 0.18);
+  --chip-border: rgba(37, 99, 235, 0.14);
+  --button-text: #ffffff;
   --paper: #ffffff;
   --paper-soft: #f5f7fa;
   --text-dark: #0f172a;
@@ -19,6 +23,7 @@
   --color-bg: var(--bg);
   --color-panel: var(--panel);
   --color-card: var(--card);
+  --color-section: var(--section);
   --color-chip: var(--chip);
   --color-border: var(--border);
   --color-text: var(--text);
@@ -26,8 +31,8 @@
   --color-muted-dark: var(--muted-strong);
   --color-blue: var(--blue);
   --color-green: var(--green);
-  --color-focus: #f8fafc;
-  --shadow-shell: 0 22px 70px rgba(0, 0, 0, 0.28);
+  --color-focus: var(--blue);
+  --shadow-shell: 0 18px 54px rgba(15, 23, 42, 0.12);
   --radius-shell: 24px;
   --radius-card: 8px;
   --radius-small: 6px;
@@ -47,6 +52,25 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="dark"] {
+  --bg: #07111f;
+  --panel: #0b1627;
+  --card: #101b2d;
+  --section: rgba(16, 27, 45, 0.76);
+  --chip: #14243a;
+  --border: #2b3a55;
+  --text: #f8fafc;
+  --muted: #bac7d9;
+  --muted-strong: #95a3b8;
+  --blue: #8fb5ff;
+  --green: #a7f3d0;
+  --shell-border: rgba(143, 181, 255, 0.2);
+  --chip-border: rgba(143, 181, 255, 0.14);
+  --button-text: #07111f;
+  --color-focus: #f8fafc;
+  --shadow-shell: 0 22px 70px rgba(0, 0, 0, 0.28);
 }
 
 *,
@@ -119,7 +143,7 @@ ul {
   padding: clamp(1rem, 2.7vw, 2rem);
   overflow: hidden;
   background: var(--color-panel);
-  border: 1px solid rgba(143, 181, 255, 0.2);
+  border: 1px solid var(--shell-border);
   border-radius: var(--radius-shell);
   box-shadow: var(--shadow-shell);
 }
@@ -128,7 +152,7 @@ ul {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-5);
-  align-items: stretch;
+  align-items: start;
 }
 
 .hero__content {
@@ -178,6 +202,7 @@ ul {
 
 .contact-card {
   min-width: 0;
+  align-self: start;
   padding: var(--space-5);
   background: var(--color-card);
   border: 1px solid var(--color-border);
@@ -202,6 +227,27 @@ ul {
   color: var(--color-blue);
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.contact-card__switches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.theme-toggle {
+  padding: 0.36rem 0.55rem;
+  color: var(--color-text);
+  background: var(--color-chip);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-blue);
 }
 
 .contact-card__body {
@@ -240,7 +286,7 @@ a.contact-row__value {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-2);
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
 }
 
 .contact-action {
@@ -250,7 +296,7 @@ a.contact-row__value {
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1rem;
-  color: #07111f;
+  color: var(--button-text);
   background: var(--color-blue);
   border-radius: var(--radius-small);
   font-size: 0.9rem;
@@ -263,7 +309,7 @@ a.contact-row__value {
 
 .contact-action:hover,
 .contact-action--button:hover {
-  color: #07111f;
+  color: var(--button-text);
   background: var(--color-green);
 }
 
@@ -306,7 +352,7 @@ a.contact-row__value {
 .experience {
   min-width: 0;
   padding: var(--space-5);
-  background: rgba(16, 27, 45, 0.76);
+  background: var(--color-section);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
 }
@@ -387,7 +433,7 @@ a.contact-row__value {
 .side-section {
   min-width: 0;
   padding: var(--space-5);
-  background: rgba(16, 27, 45, 0.76);
+  background: var(--color-section);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
 }
@@ -422,7 +468,7 @@ a.contact-row__value {
   padding: 0.44rem 0.64rem;
   color: var(--color-text);
   background: var(--color-chip);
-  border: 1px solid rgba(143, 181, 255, 0.14);
+  border: 1px solid var(--chip-border);
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 700;
@@ -674,6 +720,7 @@ a.contact-row__value {
     gap: 1.2mm;
   }
 
+  .contact-card__switches,
   .contact-card__actions {
     display: none !important;
   }

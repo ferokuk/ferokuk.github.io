@@ -1,5 +1,5 @@
 ﻿Ярослав Гнеушев
-Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production
+Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ года в production
 Москва · remote / hybrid
 Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
 

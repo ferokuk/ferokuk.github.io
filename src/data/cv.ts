@@ -72,6 +72,9 @@ export type CvUiData = {
   languageLabel: string;
   resumeLinkLabel: string;
   printPageLabel: string;
+  themeToggleLabel: string;
+  lightThemeLabel: string;
+  darkThemeLabel: string;
   mainSiteLabel: string;
   downloadTxtLabel: string;
   printSavePdfLabel: string;
@@ -142,11 +145,14 @@ export const cvRu: CvData = {
     projectsTitle: "Публичный проект",
     educationTitle: "Образование",
     languageLabel: "Язык",
-    resumeLinkLabel: "Resume",
-    printPageLabel: "Print page",
-    mainSiteLabel: "Main site",
-    downloadTxtLabel: "Download TXT",
-    printSavePdfLabel: "Print / Save as PDF",
+    resumeLinkLabel: "Резюме",
+    printPageLabel: "Печать",
+    themeToggleLabel: "Переключить тему",
+    lightThemeLabel: "Светлая",
+    darkThemeLabel: "Тёмная",
+    mainSiteLabel: "Сайт",
+    downloadTxtLabel: "Скачать TXT",
+    printSavePdfLabel: "Печать / PDF",
     profileTitle: "Профиль",
     technicalSkillsTitle: "Технические навыки",
     experienceResumeTitle: "Опыт",
@@ -168,7 +174,7 @@ export const cvRu: CvData = {
   profile: {
     name: "Ярослав Гнеушев",
     title: "Python Backend Developer",
-    subtitle: "Django / FastAPI · PostgreSQL · Redis · Celery · 3+ years in production",
+    subtitle: "Django / FastAPI · PostgreSQL · Redis · Celery · 3+ года в production",
     location: "Москва · remote / hybrid",
     eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
     summary:
@@ -286,7 +292,7 @@ export const cvRu: CvData = {
       level: "B2",
     },
   ],
-  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production",
+  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ года в production",
   additionalSkills: ["REST API", "CI/CD", "Prometheus metrics", "Grafana dashboards"],
 };
 
@@ -304,6 +310,9 @@ export const cvEn: CvData = {
     languageLabel: "Language",
     resumeLinkLabel: "Resume",
     printPageLabel: "Print page",
+    themeToggleLabel: "Switch theme",
+    lightThemeLabel: "Light",
+    darkThemeLabel: "Dark",
     mainSiteLabel: "Main site",
     downloadTxtLabel: "Download TXT",
     printSavePdfLabel: "Print / Save as PDF",

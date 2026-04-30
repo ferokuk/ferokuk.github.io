@@ -5,12 +5,16 @@ type HeaderProps = {
   contacts: ContactItem[];
   paths: CvPaths;
   ui: CvUiData;
+  theme: "light" | "dark";
+  onThemeToggle: () => void;
 };
 
-export function Header({ profile, contacts, paths, ui }: HeaderProps) {
+export function Header({ profile, contacts, paths, ui, theme, onThemeToggle }: HeaderProps) {
   const handlePrint = () => {
     window.print();
   };
+
+  const nextThemeLabel = theme === "dark" ? ui.lightThemeLabel : ui.darkThemeLabel;
 
   return (
     <header className="hero">
@@ -25,10 +29,29 @@ export function Header({ profile, contacts, paths, ui }: HeaderProps) {
       <aside className="contact-card" aria-label={ui.contactTitle}>
         <div className="contact-card__top">
           <p className="contact-card__title">{ui.contactTitle}</p>
-          <a className="language-switch" href={paths.alternateHref} hrefLang={paths.alternateLocale}>
-            {paths.alternateLanguageLabel}
-          </a>
+          <div className="contact-card__switches">
+            <button
+              className="theme-toggle"
+              type="button"
+              onClick={onThemeToggle}
+              aria-label={`${ui.themeToggleLabel}: ${nextThemeLabel}`}
+            >
+              {nextThemeLabel}
+            </button>
+            <a className="language-switch" href={paths.alternateHref} hrefLang={paths.alternateLocale}>
+              {paths.alternateLanguageLabel}
+            </a>
+          </div>
         </div>
+        <div className="contact-card__actions">
+          <a className="contact-action" href={paths.resumeHref}>
+            {ui.resumeLinkLabel}
+          </a>
+          <button className="contact-action contact-action--button" type="button" onClick={handlePrint}>
+            {ui.printPageLabel}
+          </button>
+        </div>
+
         <address className="contact-card__body">
           <div className="contact-row">
             <span className="contact-row__label">{ui.locationLabel}</span>
@@ -50,15 +73,6 @@ export function Header({ profile, contacts, paths, ui }: HeaderProps) {
             </div>
           ))}
         </address>
-
-        <div className="contact-card__actions">
-          <a className="contact-action" href={paths.resumeHref}>
-            {ui.resumeLinkLabel}
-          </a>
-          <button className="contact-action contact-action--button" type="button" onClick={handlePrint}>
-            {ui.printPageLabel}
-          </button>
-        </div>
       </aside>
     </header>
   );
