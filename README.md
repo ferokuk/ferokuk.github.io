@@ -1,4 +1,4 @@
-# Ярослав Гнеушев — one-page CV
+# Ярослав Гнеушев - one-page CV
 
 Production-ready personal CV website for `Python Backend Developer` roles. The main page is a polished visual one-page CV for recruiters and hiring managers; `resume.html` and the TXT file are clean application-friendly formats for printing, PDF export, and ATS-style submission.
 
@@ -58,7 +58,7 @@ npm run generate:resume-txt
 
 ## Resume PDF Export
 
-Open `/resume.html` or `/en/resume.html`, then use the browser print dialog and choose “Save as PDF”. The project intentionally does not generate PDFs automatically and does not include Puppeteer, Playwright, react-pdf, or server-side PDF tooling.
+Open `/resume.html` or `/en/resume.html`, then use the browser print dialog and choose "Save as PDF". The project intentionally does not generate PDFs automatically and does not include Puppeteer, Playwright, react-pdf, or server-side PDF tooling.
 
 ## GitHub Pages
 

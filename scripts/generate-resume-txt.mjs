@@ -19,7 +19,7 @@ function getContact(cv, kind) {
 }
 
 function getCompanyName(company) {
-  return company.split(" · ")[0];
+  return company.split(" - ")[0];
 }
 
 function buildResumeText(cv) {
@@ -45,7 +45,7 @@ function buildResumeText(cv) {
 
   for (const job of cv.experience) {
     lines.push(
-      `${getCompanyName(job.company)} — ${job.role}`,
+      `${getCompanyName(job.company)} - ${job.role}`,
       job.period,
       `${cv.ui.contextLabel}: ${job.context}`,
       ...job.bullets.map((bullet) => `- ${bullet}`),

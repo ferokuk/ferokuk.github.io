@@ -24,7 +24,7 @@ export function Education({ items, languages, title, languageLabel }: EducationP
 
       <div className="language-line">
         <span>{languageLabel}</span>
-        <strong>{languages.map((language) => `${language.name} · ${language.level}`).join(", ")}</strong>
+        <strong>{languages.map((language) => `${language.name} / ${language.level}`).join(", ")}</strong>
       </div>
     </section>
   );
