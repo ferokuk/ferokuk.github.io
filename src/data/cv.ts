@@ -76,7 +76,7 @@ export const cv: CvData = {
     location: "Москва · remote / hybrid",
     eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
     summary:
-      "Backend-разработчик с 3+ годами production-опыта в страховании, fintech и аналитических системах. Фокус: платежные и антифрод-пайплайны, PostgreSQL-оптимизация, асинхронная обработка, мониторинг и тестируемая архитектура.",
+      "Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объёмы данных и обеспечивают стабильную работу продуктовых систем в production.",
     target: "Цель: backend-команды в fintech, platform, product",
   },
   contacts: [

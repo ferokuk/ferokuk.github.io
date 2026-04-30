@@ -4,7 +4,7 @@ Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ y
 Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
 
 Profile
-Backend-разработчик с 3+ годами production-опыта в страховании, fintech и аналитических системах. Фокус: платежные и антифрод-пайплайны, PostgreSQL-оптимизация, асинхронная обработка, мониторинг и тестируемая архитектура.
+Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объёмы данных и обеспечивают стабильную работу продуктовых систем в production.
 
 Technical Skills
 Backend: Python, Django, DRF, FastAPI, Flask, SQLAlchemy
