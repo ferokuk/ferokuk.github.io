@@ -12,6 +12,8 @@ export type ProfileData = {
   name: string;
   title: string;
   subtitle: string;
+  stackHighlights: string[];
+  experienceHighlight: string;
   location: string;
   eyebrow: string;
   summary: string;
@@ -174,11 +176,13 @@ export const cvRu: CvData = {
   profile: {
     name: "Ярослав Гнеушев",
     title: "Python Backend Developer",
-    subtitle: "Django / FastAPI / PostgreSQL / Redis / Celery / 3+ года коммерческого опыта",
-    location: "Москва / remote / hybrid",
-    eyebrow: "Python Backend / Fintech / Insurance / PostgreSQL / Async Processing",
+    subtitle: "Django, FastAPI, PostgreSQL, Redis, Celery. 3+ года коммерческого опыта",
+    stackHighlights: ["Django", "FastAPI", "PostgreSQL", "Redis", "Celery"],
+    experienceHighlight: "3+ года коммерческого опыта",
+    location: "Москва, удаленно, гибрид",
+    eyebrow: "Python Backend / финтех / страхование / PostgreSQL / асинхронная обработка",
     summary:
-      "Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.",
+      "Python backend-разработчик с опытом разработки backend-систем в страховании, финтехе и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.",
   },
   contacts: [
     {
@@ -233,15 +237,15 @@ export const cvRu: CvData = {
     },
     {
       role: "Python Developer",
-      company: "Fintech startup - проектная работа, NDA",
+      company: "Финтех-стартап - проектная работа, NDA",
       period: "май 2024 - июнь 2025",
       context: "Платежная платформа для мерчантов: платежи, рефанды, статусы, webhooks, интеграция с платежным шлюзом.",
       bullets: [
         "Разрабатывал backend платежной платформы: создание платежей, статусы, рефанды, webhooks, интеграция с платежным шлюзом.",
         "Реализовал идемпотентность через Redis SET NX и перевел обработку платежей в Celery + Redis; время ответа API снизилось с 4-6s до ~200ms.",
-        "Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и materialized views; отчеты ускорились с 25s+ до ~2s.",
-        "Собрал event-driven analytics pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.",
-        "Выделил notification-service на FastAPI + RabbitMQ: webhooks, email, DLQ, retry с exponential backoff.",
+        "Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и материализованные представления; отчеты ускорились с 25s+ до ~2s.",
+        "Собрал event-driven аналитический pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.",
+        "Выделил сервис уведомлений на FastAPI + RabbitMQ: webhooks, email, DLQ, повторы с exponential backoff.",
       ],
       techStack: [
         "Python",
@@ -292,7 +296,7 @@ export const cvRu: CvData = {
       level: "B2",
     },
   ],
-  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ года коммерческого опыта",
+  resumeTagline: "Python Backend Developer | Django, FastAPI, PostgreSQL, Redis, Celery | 3+ года коммерческого опыта",
   additionalSkills: ["REST API", "CI/CD", "Prometheus metrics", "Grafana dashboards"],
 };
 
@@ -337,8 +341,10 @@ export const cvEn: CvData = {
   profile: {
     name: "Yaroslav Gneushev",
     title: "Python Backend Developer",
-    subtitle: "Django / FastAPI / PostgreSQL / Redis / Celery / 3+ years in production",
-    location: "Moscow / remote / hybrid",
+    subtitle: "Django, FastAPI, PostgreSQL, Redis, Celery. 3+ years in production",
+    stackHighlights: ["Django", "FastAPI", "PostgreSQL", "Redis", "Celery"],
+    experienceHighlight: "3+ years in production",
+    location: "Moscow, remote or hybrid",
     eyebrow: "Python Backend / Fintech / Insurance / PostgreSQL / Async Processing",
     summary:
       "Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.",
@@ -455,7 +461,7 @@ export const cvEn: CvData = {
       level: "B2",
     },
   ],
-  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production",
+  resumeTagline: "Python Backend Developer | Django, FastAPI, PostgreSQL, Redis, Celery | 3+ years in production",
   additionalSkills: ["REST API", "CI/CD", "Prometheus metrics", "Grafana dashboards"],
 };
 

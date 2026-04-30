@@ -1,6 +1,6 @@
 ﻿Yaroslav Gneushev
-Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production
-Moscow / remote / hybrid
+Python Backend Developer | Django, FastAPI, PostgreSQL, Redis, Celery | 3+ years in production
+Moscow, remote or hybrid
 Email: gneushevyar@mail.ru | Telegram: @ferokuk | GitHub: github.com/ferokuk
 
 Profile
