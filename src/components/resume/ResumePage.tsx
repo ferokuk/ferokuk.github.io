@@ -12,7 +12,7 @@ function getContact(cv: CvData, kind: ContactItem["kind"]) {
 }
 
 function getCompanyName(company: string) {
-  return company.split(" · ")[0];
+  return company.split(" - ")[0];
 }
 
 type ResumePageProps = {
@@ -84,7 +84,7 @@ export function ResumePage({ cv }: ResumePageProps) {
             {cv.experience.map((job) => (
               <article className="resume-job" key={`${job.company}-${job.period}`}>
                 <h3>
-                  {getCompanyName(job.company)} — {job.role}
+                  {getCompanyName(job.company)} - {job.role}
                 </h3>
                 <p>{job.period}</p>
                 <p>

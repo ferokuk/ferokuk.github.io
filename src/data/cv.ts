@@ -15,13 +15,6 @@ export type ProfileData = {
   location: string;
   eyebrow: string;
   summary: string;
-  target: string;
-};
-
-export type Metric = {
-  value: string;
-  label: string;
-  note: string;
 };
 
 export type ExperienceItem = {
@@ -77,9 +70,11 @@ export type CvUiData = {
   projectsTitle: string;
   educationTitle: string;
   languageLabel: string;
-  footerTitle: string;
   resumeLinkLabel: string;
   printPageLabel: string;
+  themeToggleLabel: string;
+  lightThemeLabel: string;
+  darkThemeLabel: string;
   mainSiteLabel: string;
   downloadTxtLabel: string;
   printSavePdfLabel: string;
@@ -99,7 +94,6 @@ export type CvData = {
   paths: CvPaths;
   profile: ProfileData;
   contacts: ContactItem[];
-  metrics: Metric[];
   experience: ExperienceItem[];
   stack: StackGroup[];
   projects: ProjectData[];
@@ -151,12 +145,14 @@ export const cvRu: CvData = {
     projectsTitle: "Публичный проект",
     educationTitle: "Образование",
     languageLabel: "Язык",
-    footerTitle: "Контакты для обсуждения backend-задач",
-    resumeLinkLabel: "Resume",
-    printPageLabel: "Print page",
-    mainSiteLabel: "Main site",
-    downloadTxtLabel: "Download TXT",
-    printSavePdfLabel: "Print / Save as PDF",
+    resumeLinkLabel: "Резюме",
+    printPageLabel: "Печать",
+    themeToggleLabel: "Переключить тему",
+    lightThemeLabel: "Светлая",
+    darkThemeLabel: "Темная",
+    mainSiteLabel: "Сайт",
+    downloadTxtLabel: "Скачать TXT",
+    printSavePdfLabel: "Печать / PDF",
     profileTitle: "Профиль",
     technicalSkillsTitle: "Технические навыки",
     experienceResumeTitle: "Опыт",
@@ -178,12 +174,11 @@ export const cvRu: CvData = {
   profile: {
     name: "Ярослав Гнеушев",
     title: "Python Backend Developer",
-    subtitle: "Django / FastAPI · PostgreSQL · Redis · Celery · 3+ years in production",
-    location: "Москва · remote / hybrid",
-    eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
+    subtitle: "Django / FastAPI / PostgreSQL / Redis / Celery / 3+ года коммерческого опыта",
+    location: "Москва / remote / hybrid",
+    eyebrow: "Python Backend / Fintech / Insurance / PostgreSQL / Async Processing",
     summary:
-      "Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объёмы данных и обеспечивают стабильную работу продуктовых систем в production.",
-    target: "Цель: backend-команды в fintech, platform, product",
+      "Python backend-разработчик с опытом разработки backend-систем в страховании, fintech и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.",
   },
   contacts: [
     {
@@ -208,39 +203,17 @@ export const cvRu: CvData = {
       ariaLabel: "Написать Ярославу Гнеушеву на email",
     },
   ],
-  metrics: [
-    {
-      value: "5×",
-      label: "скорость обработки счетов",
-      note: "Celery, Redis, N+1",
-    },
-    {
-      value: "4–6s → 200ms",
-      label: "время ответа API",
-      note: "асинхронный платежный pipeline",
-    },
-    {
-      value: "25s+ → 2s",
-      label: "оптимизация отчетов",
-      note: "PostgreSQL, индексы, mat. views",
-    },
-    {
-      value: "65–70%",
-      label: "покрытие тестами",
-      note: "интеграционные сценарии",
-    },
-  ],
   experience: [
     {
       role: "Backend Python Developer",
-      company: "СОГАЗ · страхование / финансовый сектор",
-      period: "Jul 2025 — Present",
+      company: "СОГАЗ - страхование / финансовый сектор",
+      period: "июль 2025 - настоящее время",
       context: "Backend-платформа обработки счетов и антифрод-проверок в страховом домене.",
       bullets: [
         "Развивал backend антифрод-системы: правила детекции, pipeline обработки счетов, интеграция ML-скоринга через REST API.",
-        "Вынес тяжелые операции в Celery, добавил Redis-кеширование, исправил N+1-запросы; обработка счетов ускорилась до 5×.",
-        "Провел миграцию платформы: Python 3.9 → 3.12, Django 3.2 → 5.2, обновление зависимостей и стабилизация production.",
-        "Добавил интеграционные тесты для антифрод-правил, валидации счетов, ML-сервиса и внешних API; покрытие ключевого backend-кода — до 70%.",
+        "Вынес тяжелые операции в Celery, добавил Redis-кеширование, исправил N+1-запросы; обработка счетов ускорилась до 5x.",
+        "Провел миграцию платформы: Python 3.9 -> 3.12, Django 3.2 -> 5.2, обновление зависимостей и стабилизация платформы.",
+        "Добавил интеграционные тесты для антифрод-правил, валидации счетов, ML-сервиса и внешних API; покрытие ключевого backend-кода - до 70%.",
         "Настроил Prometheus/Grafana-метрики, дашборды и алерты по техническим и бизнес-сценариям.",
       ],
       techStack: [
@@ -260,12 +233,12 @@ export const cvRu: CvData = {
     },
     {
       role: "Python Developer",
-      company: "Fintech startup · проектная работа, NDA",
-      period: "May 2024 — Jun 2025",
+      company: "Fintech startup - проектная работа, NDA",
+      period: "май 2024 - июнь 2025",
       context: "Платежная платформа для мерчантов: платежи, рефанды, статусы, webhooks, интеграция с платежным шлюзом.",
       bullets: [
         "Разрабатывал backend платежной платформы: создание платежей, статусы, рефанды, webhooks, интеграция с платежным шлюзом.",
-        "Реализовал идемпотентность через Redis SET NX и перевел обработку платежей в Celery + Redis; время ответа API снизилось с 4–6s до ~200ms.",
+        "Реализовал идемпотентность через Redis SET NX и перевел обработку платежей в Celery + Redis; время ответа API снизилось с 4-6s до ~200ms.",
         "Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE, составные/частичные индексы и materialized views; отчеты ускорились с 25s+ до ~2s.",
         "Собрал event-driven analytics pipeline на Kafka с outbox-паттерном; задержка аналитики снизилась с суток до десятков секунд.",
         "Выделил notification-service на FastAPI + RabbitMQ: webhooks, email, DLQ, retry с exponential backoff.",
@@ -289,8 +262,8 @@ export const cvRu: CvData = {
     },
     {
       role: "Python Developer",
-      company: "ЦИАРС · analytics / automation",
-      period: "Dec 2022 — May 2024",
+      company: "ЦИАРС - аналитика / автоматизация",
+      period: "декабрь 2022 - май 2024",
       context: "Аналитические и автоматизационные системы для мониторинга перевозок, парсинга документов и обработки данных.",
       bullets: [
         "Разрабатывал backend и аналитические интерфейсы для системы мониторинга перевозок на Flask/Dash.",
@@ -306,11 +279,11 @@ export const cvRu: CvData = {
   education: [
     {
       institution: "Финансовый университет при Правительстве РФ",
-      program: "Прикладные информационные системы в экономике и финансах · 2028",
+      program: "Прикладные информационные системы в экономике и финансах / 2028",
     },
     {
       institution: "Колледж информатики и программирования",
-      program: "Программирование в компьютерных системах · 2024",
+      program: "Программирование в компьютерных системах / 2024",
     },
   ],
   languages: [
@@ -319,7 +292,7 @@ export const cvRu: CvData = {
       level: "B2",
     },
   ],
-  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ years in production",
+  resumeTagline: "Python Backend Developer | Django / FastAPI | PostgreSQL | Redis | Celery | 3+ года коммерческого опыта",
   additionalSkills: ["REST API", "CI/CD", "Prometheus metrics", "Grafana dashboards"],
 };
 
@@ -335,9 +308,11 @@ export const cvEn: CvData = {
     projectsTitle: "Public project",
     educationTitle: "Education",
     languageLabel: "Language",
-    footerTitle: "Contacts for backend opportunities",
     resumeLinkLabel: "Resume",
     printPageLabel: "Print page",
+    themeToggleLabel: "Switch theme",
+    lightThemeLabel: "Light",
+    darkThemeLabel: "Dark",
     mainSiteLabel: "Main site",
     downloadTxtLabel: "Download TXT",
     printSavePdfLabel: "Print / Save as PDF",
@@ -362,12 +337,11 @@ export const cvEn: CvData = {
   profile: {
     name: "Yaroslav Gneushev",
     title: "Python Backend Developer",
-    subtitle: "Django / FastAPI · PostgreSQL · Redis · Celery · 3+ years in production",
-    location: "Moscow · remote / hybrid",
-    eyebrow: "Python Backend · Fintech · Insurance · PostgreSQL · Async Processing",
+    subtitle: "Django / FastAPI / PostgreSQL / Redis / Celery / 3+ years in production",
+    location: "Moscow / remote / hybrid",
+    eyebrow: "Python Backend / Fintech / Insurance / PostgreSQL / Async Processing",
     summary:
       "Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.",
-    target: "Target: backend teams in fintech, platform, product",
   },
   contacts: [
     {
@@ -392,37 +366,15 @@ export const cvEn: CvData = {
       ariaLabel: "Email Yaroslav Gneushev",
     },
   ],
-  metrics: [
-    {
-      value: "5×",
-      label: "invoice processing speed",
-      note: "Celery, Redis, N+1",
-    },
-    {
-      value: "4–6s → 200ms",
-      label: "API response time",
-      note: "async payment pipeline",
-    },
-    {
-      value: "25s+ → 2s",
-      label: "report optimization",
-      note: "PostgreSQL, indexes, mat. views",
-    },
-    {
-      value: "65–70%",
-      label: "test coverage",
-      note: "integration scenarios",
-    },
-  ],
   experience: [
     {
       role: "Backend Python Developer",
-      company: "SOGAZ · insurance / financial sector",
-      period: "Jul 2025 — Present",
+      company: "SOGAZ - insurance / financial sector",
+      period: "Jul 2025 - Present",
       context: "Backend platform for invoice processing and antifraud checks in the insurance domain.",
       bullets: [
         "Developed backend antifraud systems: detection rules, invoice processing pipeline, and ML scoring integration through REST API.",
-        "Moved heavy operations to Celery, added Redis caching, fixed N+1 queries; invoice processing became up to 5× faster.",
+        "Moved heavy operations to Celery, added Redis caching, fixed N+1 queries; invoice processing became up to 5x faster.",
         "Migrated the platform from Python 3.9 to 3.12 and Django 3.2 to 5.2, updated dependencies, and stabilized production.",
         "Added integration tests for antifraud rules, invoice validation, ML service, and external APIs; key backend code coverage reached 70%.",
         "Set up Prometheus/Grafana metrics, dashboards, and alerts for technical and business scenarios.",
@@ -444,12 +396,12 @@ export const cvEn: CvData = {
     },
     {
       role: "Python Developer",
-      company: "Fintech startup · project work, NDA",
-      period: "May 2024 — Jun 2025",
+      company: "Fintech startup - project work, NDA",
+      period: "May 2024 - Jun 2025",
       context: "Payment platform for merchants: payments, refunds, statuses, webhooks, and payment gateway integration.",
       bullets: [
         "Developed backend for a payment platform: payment creation, statuses, refunds, webhooks, and payment gateway integration.",
-        "Implemented idempotency with Redis SET NX and moved payment processing to Celery + Redis; API response time dropped from 4–6s to ~200ms.",
+        "Implemented idempotency with Redis SET NX and moved payment processing to Celery + Redis; API response time dropped from 4-6s to ~200ms.",
         "Optimized PostgreSQL queries using EXPLAIN ANALYZE, composite/partial indexes, and materialized views; reports improved from 25s+ to ~2s.",
         "Built an event-driven analytics pipeline on Kafka with the outbox pattern; analytics delay dropped from one day to tens of seconds.",
         "Extracted a notification service on FastAPI + RabbitMQ: webhooks, email, DLQ, retries with exponential backoff.",
@@ -473,8 +425,8 @@ export const cvEn: CvData = {
     },
     {
       role: "Python Developer",
-      company: "CIARS · analytics / automation",
-      period: "Dec 2022 — May 2024",
+      company: "CIARS - analytics / automation",
+      period: "Dec 2022 - May 2024",
       context: "Analytics and automation systems for transport monitoring, document parsing, and data processing.",
       bullets: [
         "Developed backend and analytical interfaces for a transport monitoring system on Flask/Dash.",
@@ -490,11 +442,11 @@ export const cvEn: CvData = {
   education: [
     {
       institution: "Financial University under the Government of the Russian Federation",
-      program: "Applied Information Systems in Economics and Finance · 2028",
+      program: "Applied Information Systems in Economics and Finance / 2028",
     },
     {
       institution: "College of Informatics and Programming",
-      program: "Computer Systems Programming · 2024",
+      program: "Computer Systems Programming / 2024",
     },
   ],
   languages: [

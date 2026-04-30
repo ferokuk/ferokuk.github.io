@@ -1,8 +1,7 @@
+import { useEffect, useState } from "react";
 import { Education } from "./components/Education";
 import { Experience } from "./components/Experience";
-import { FooterCta } from "./components/FooterCta";
 import { Header } from "./components/Header";
-import { Metrics } from "./components/Metrics";
 import { PublicProject } from "./components/PublicProject";
 import { Stack } from "./components/Stack";
 import type { CvData } from "./data/cv";
@@ -11,7 +10,28 @@ type AppProps = {
   cv: CvData;
 };
 
+type Theme = "light" | "dark";
+
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  return window.localStorage.getItem("cv-theme") === "dark" ? "dark" : "light";
+}
+
 export default function App({ cv }: AppProps) {
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("cv-theme", theme);
+  }, [theme]);
+
+  const handleThemeToggle = () => {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+  };
+
   return (
     <div className="page">
       <main className="cv-shell" aria-label={cv.ui.documentLabel}>
@@ -20,9 +40,9 @@ export default function App({ cv }: AppProps) {
           contacts={cv.contacts}
           paths={cv.paths}
           ui={cv.ui}
+          theme={theme}
+          onThemeToggle={handleThemeToggle}
         />
-
-        <Metrics metrics={cv.metrics} />
 
         <div className="layout">
           <div className="main-column">
@@ -40,8 +60,6 @@ export default function App({ cv }: AppProps) {
             />
           </aside>
         </div>
-
-        <FooterCta contacts={cv.contacts} target={cv.profile.target} paths={cv.paths} ui={cv.ui} />
       </main>
     </div>
   );
