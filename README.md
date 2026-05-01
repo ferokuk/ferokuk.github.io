@@ -73,7 +73,7 @@ https://ferokuk.github.io
 If this project is deployed as a repository site, for example `https://ferokuk.github.io/one-page-cv/`, change `base` in `vite.config.ts` to:
 
 ```ts
-base: "/one-page-cv/",
+base: "/one-page-cv/"
 ```
 
 GitHub Pages may still need to be enabled in repository settings with GitHub Actions as the Pages source.
