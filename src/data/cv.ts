@@ -180,7 +180,7 @@ export const cvRu: CvData = {
     stackHighlights: ["Django", "FastAPI", "PostgreSQL", "Redis", "Celery"],
     experienceHighlight: "3+ года коммерческого опыта",
     location: "Москва, удаленно, гибрид",
-    eyebrow: "Python Backend / финтех / страхование / PostgreSQL / асинхронная обработка",
+    eyebrow: "Python Backend / Финтех / Страхование",
     summary:
       "Python backend-разработчик с опытом разработки систем в страховании, финтехе и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.",
   },
@@ -345,7 +345,7 @@ export const cvEn: CvData = {
     stackHighlights: ["Django", "FastAPI", "PostgreSQL", "Redis", "Celery"],
     experienceHighlight: "3+ years in production",
     location: "Moscow, remote or hybrid",
-    eyebrow: "Python Backend / Fintech / Insurance / PostgreSQL / Async Processing",
+    eyebrow: "Python Backend / Fintech / Insurance",
     summary:
       "Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.",
   },
