@@ -220,7 +220,7 @@ export const cvRu: CvData = {
       context: "Backend-платформа обработки счетов и антифрод-проверок в страховом домене.",
       bullets: [
         "Развивал антифрод-систему: реализовал новые алгоритмы детекции мошеннических операций, что увеличило автоматическое выявление подозрительных счетов до 10% ежемесячно и снизило нагрузку на экспертов.",
-        "Масштабировал пайплайн обработки счетов: вынес тяжелые операции в Celery с приоритетными очередями, реализовал cache-aside в Redis для иерархического справочника диагнозов, оптимизировал тяжелые ORM-запросы антифрод-правил через select_related / prefetch_related - устранил N+1 и ускорил обработку в 5 раз, повысив пропускную способность в 6 раз.",
+        "Масштабировал пайплайн обработки счетов: вынес тяжёлые операции в Celery с приоритетными очередями, реализовал cache-aside в Redis для иерархического справочника диагнозов, оптимизировал тяжёлые ORM-запросы антифрод-правил - ускорил обработку в 5 раз, повысив пропускную способность в 6 раз.",
         "Разработал микросервис ML-скоринга счетов и интегрировал его в основной backend-pipeline: REST API с балансировкой воркеров, Circuit Breaker и retry с экспоненциальной задержкой для устойчивости к сбоям ML-сервиса, rate limiting на исходящих вызовах для защиты от перегрузки модели.",
         "Обеспечил покрытие backend-кодовой базы интеграционными тестами на pytest до 70%: ключевые сценарии валидации счетов, логика антифрод-правил, взаимодействие с ML-сервисом и внешними API.",
         "Внедрил observability через Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, кастомные бизнес-метрики обработки счетов, алерты в Grafana - сократил время обнаружения инцидентов с ~60 минут до ~5 минут.",
@@ -396,7 +396,7 @@ export const cvEn: CvData = {
       context: "Backend platform for invoice processing and antifraud checks in the insurance domain.",
       bullets: [
         "Developed the antifraud system: implemented new fraud detection algorithms that increased automatic identification of suspicious invoices to 10% monthly and reduced the workload on experts.",
-        "Scaled the invoice processing pipeline: moved heavy operations to Celery with priority queues, implemented cache-aside in Redis for the hierarchical diagnosis reference, optimized heavy ORM queries for antifraud rules via select_related / prefetch_related - eliminated N+1 and accelerated processing 5x, increasing throughput 6x.",
+        "Scaled the invoice processing pipeline: moved heavy operations to Celery with priority queues, implemented cache-aside in Redis for the hierarchical diagnosis reference, optimized heavy ORM queries for antifraud rules - accelerated processing 5x, increasing throughput 6x.",
         "Built an ML-scoring microservice for invoices and integrated it into the main backend pipeline: REST API with worker balancing, Circuit Breaker and retry with exponential backoff for resilience against ML service failures, rate limiting on outbound calls to protect the model from overload.",
         "Achieved up to 70% backend codebase coverage with pytest integration tests: key invoice validation scenarios, antifraud rules logic, interaction with the ML service and external APIs.",
         "Implemented observability via Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, custom business metrics for invoice processing, Grafana alerts - reduced incident detection time from ~60 minutes to ~5 minutes.",

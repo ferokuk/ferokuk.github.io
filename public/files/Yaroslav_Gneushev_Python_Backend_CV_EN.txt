@@ -21,7 +21,7 @@ SOGAZ - Backend Python Developer
 Jul 2025 - Present
 Context: Backend platform for invoice processing and antifraud checks in the insurance domain.
 - Developed the antifraud system: implemented new fraud detection algorithms that increased automatic identification of suspicious invoices to 10% monthly and reduced the workload on experts.
-- Scaled the invoice processing pipeline: moved heavy operations to Celery with priority queues, implemented cache-aside in Redis for the hierarchical diagnosis reference, optimized heavy ORM queries for antifraud rules via select_related / prefetch_related - eliminated N+1 and accelerated processing 5x, increasing throughput 6x.
+- Scaled the invoice processing pipeline: moved heavy operations to Celery with priority queues, implemented cache-aside in Redis for the hierarchical diagnosis reference, optimized heavy ORM queries for antifraud rules - accelerated processing 5x, increasing throughput 6x.
 - Built an ML-scoring microservice for invoices and integrated it into the main backend pipeline: REST API with worker balancing, Circuit Breaker and retry with exponential backoff for resilience against ML service failures, rate limiting on outbound calls to protect the model from overload.
 - Achieved up to 70% backend codebase coverage with pytest integration tests: key invoice validation scenarios, antifraud rules logic, interaction with the ML service and external APIs.
 - Implemented observability via Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, custom business metrics for invoice processing, Grafana alerts - reduced incident detection time from ~60 minutes to ~5 minutes.
