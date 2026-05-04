@@ -224,7 +224,7 @@ export const cvRu: CvData = {
         "Разработал микросервис ML-скоринга счетов и интегрировал его в основной backend-pipeline: REST API с балансировкой воркеров, Circuit Breaker и retry с экспоненциальной задержкой для устойчивости к сбоям ML-сервиса, rate limiting на исходящих вызовах для защиты от перегрузки модели.",
         "Обеспечил покрытие backend-кодовой базы интеграционными тестами на pytest до 70%: ключевые сценарии валидации счетов, логика антифрод-правил, взаимодействие с ML-сервисом и внешними API.",
         "Внедрил observability через Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, кастомные бизнес-метрики обработки счетов, алерты в Grafana - сократил время обнаружения инцидентов с ~60 минут до ~5 минут.",
-        "Настроил liveness и readiness probes в Kubernetes для автоматического рестарта упавших подов и корректного включения сервисов в балансировку только после готовности.",
+        "Настроил liveness и readiness probes в Kubernetes.",
         "Разработал AI-агента для code review: ReAct-агент на LangChain/LangGraph, MCP-серверы с интеграцией с GitLab API, внутренними требованиями к безопасности, UI-kit, автоматический анализ merge request в CI/CD.",
       ],
       techStack: [
@@ -255,7 +255,7 @@ export const cvRu: CvData = {
       period: "май 2024 - июнь 2025",
       context: "Платежная платформа для мерчантов: платежи, рефанды, статусы, webhooks, интеграция с платежным шлюзом.",
       bullets: [
-        "Разрабатывал backend платежной платформы: REST API для мерчантов (создание платежей, статусы, рефанды, webhooks), интеграция с платежным шлюзом, идемпотентность через Redis SET NX.",
+        "Разрабатывал backend платежной платформы: REST API для мерчантов (создание платежей, статусы, рефанды, webhooks), интеграция с платежным шлюзом.",
         "Перевел обработку платежей из синхронной в асинхронную через Celery + Redis, сократив время ответа API с 4-6 сек до ~200 мс и устранив ошибки при пиковых нагрузках.",
         "Оптимизировал PostgreSQL-запросы через EXPLAIN ANALYZE: составные индексы, частичные индексы, материализованные представления. Страница транзакций - с 4 сек до 400 мс, отчеты - с 25+ сек до ~2 сек.",
         "Реализовал event-driven pipeline аналитики на Kafka с outbox-паттерном и сервисом-relay для гарантированной обработки платежных событий. Снизил задержку аналитических данных с суток до десятков секунд.",
@@ -400,7 +400,7 @@ export const cvEn: CvData = {
         "Built an ML-scoring microservice for invoices and integrated it into the main backend pipeline: REST API with worker balancing, Circuit Breaker and retry with exponential backoff for resilience against ML service failures, rate limiting on outbound calls to protect the model from overload.",
         "Achieved up to 70% backend codebase coverage with pytest integration tests: key invoice validation scenarios, antifraud rules logic, interaction with the ML service and external APIs.",
         "Implemented observability via Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, custom business metrics for invoice processing, Grafana alerts - reduced incident detection time from ~60 minutes to ~5 minutes.",
-        "Configured liveness and readiness probes in Kubernetes for automatic restart of failed pods and inclusion of services into load balancing only after they are ready.",
+        "Configured liveness and readiness probes in Kubernetes.",
         "Built an AI agent for code review: ReAct agent on LangChain/LangGraph, MCP servers integrated with GitLab API, internal security requirements, and UI kit; automatic merge request analysis in CI/CD.",
       ],
       techStack: [
@@ -431,7 +431,7 @@ export const cvEn: CvData = {
       period: "May 2024 - Jun 2025",
       context: "Payment platform for merchants: payments, refunds, statuses, webhooks, and payment gateway integration.",
       bullets: [
-        "Developed the backend of the payment platform: REST API for merchants (payment creation, statuses, refunds, webhooks), payment gateway integration, idempotency via Redis SET NX.",
+        "Developed the backend of the payment platform: REST API for merchants (payment creation, statuses, refunds, webhooks), payment gateway integration.",
         "Migrated payment processing from synchronous to asynchronous via Celery + Redis, reducing API response time from 4-6s to ~200ms and eliminating errors under peak load.",
         "Optimized PostgreSQL queries via EXPLAIN ANALYZE: composite indexes, partial indexes, materialized views. Transactions page - from 4s to 400ms, reports - from 25s+ to ~2s.",
         "Implemented an event-driven analytics pipeline on Kafka with the outbox pattern and a relay service for guaranteed processing of payment events. Reduced analytics data delay from one day to tens of seconds.",
