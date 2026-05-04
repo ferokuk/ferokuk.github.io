@@ -12,6 +12,7 @@ Data: PostgreSQL, Redis, SQL, Pandas, NumPy
 Async: Celery, RabbitMQ, Kafka, Outbox
 Infrastructure: Docker, Kubernetes, Nginx, Linux, GitLab CI
 Quality: pytest, Prometheus, Grafana, Ruff, Mypy
+AI: LangChain, LangGraph, MCP
 Additional: REST API, CI/CD, Prometheus metrics, Grafana dashboards
 
 Experience
@@ -19,21 +20,25 @@ Experience
 SOGAZ - Backend Python Developer
 Jul 2025 - Present
 Context: Backend platform for invoice processing and antifraud checks in the insurance domain.
-- Developed backend antifraud systems: detection rules, invoice processing pipeline, and ML scoring integration through REST API.
-- Moved heavy operations to Celery, added Redis caching, fixed N+1 queries; invoice processing became up to 5x faster.
-- Migrated the platform from Python 3.9 to 3.12 and Django 3.2 to 5.2, updated dependencies, and stabilized production.
-- Added integration tests for antifraud rules, invoice validation, ML service, and external APIs; key backend code coverage reached 70%.
-- Set up Prometheus/Grafana metrics, dashboards, and alerts for technical and business scenarios.
-Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, Docker, Kubernetes, pytest, Prometheus, Grafana
+- Developed the antifraud system: implemented new fraud detection algorithms that increased automatic identification of suspicious invoices to 10% monthly and reduced the workload on experts.
+- Scaled the invoice processing pipeline: moved heavy operations to Celery with priority queues, implemented cache-aside in Redis for the hierarchical diagnosis reference, optimized heavy ORM queries for antifraud rules via select_related / prefetch_related - eliminated N+1 and accelerated processing 5x, increasing throughput 6x.
+- Built an ML-scoring microservice for invoices and integrated it into the main backend pipeline: REST API with worker balancing, Circuit Breaker and retry with exponential backoff for resilience against ML service failures, rate limiting on outbound calls to protect the model from overload.
+- Achieved up to 70% backend codebase coverage with pytest integration tests: key invoice validation scenarios, antifraud rules logic, interaction with the ML service and external APIs.
+- Implemented observability via Prometheus + Grafana: postgres-exporter, celery-exporter, django-prometheus, custom business metrics for invoice processing, Grafana alerts - reduced incident detection time from ~60 minutes to ~5 minutes.
+- Configured liveness and readiness probes in Kubernetes for automatic restart of failed pods and inclusion of services into load balancing only after they are ready.
+- Built an AI agent for code review: ReAct agent on LangChain/LangGraph, MCP servers integrated with GitLab API, internal security requirements, and UI kit; automatic merge request analysis in CI/CD.
+Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, RabbitMQ, Docker, Kubernetes, Nginx, pytest, Prometheus, Grafana, Pandas, NumPy, LangChain, LangGraph, MCP
 
 Fintech startup - Python Developer
 May 2024 - Jun 2025
 Context: Payment platform for merchants: payments, refunds, statuses, webhooks, and payment gateway integration.
-- Developed backend for a payment platform: payment creation, statuses, refunds, webhooks, and payment gateway integration.
-- Implemented idempotency with Redis SET NX and moved payment processing to Celery + Redis; API response time dropped from 4-6s to ~200ms.
-- Optimized PostgreSQL queries using EXPLAIN ANALYZE, composite/partial indexes, and materialized views; reports improved from 25s+ to ~2s.
-- Built an event-driven analytics pipeline on Kafka with the outbox pattern; analytics delay dropped from one day to tens of seconds.
-- Extracted a notification service on FastAPI + RabbitMQ: webhooks, email, DLQ, retries with exponential backoff.
+- Developed the backend of the payment platform: REST API for merchants (payment creation, statuses, refunds, webhooks), payment gateway integration, idempotency via Redis SET NX.
+- Migrated payment processing from synchronous to asynchronous via Celery + Redis, reducing API response time from 4-6s to ~200ms and eliminating errors under peak load.
+- Optimized PostgreSQL queries via EXPLAIN ANALYZE: composite indexes, partial indexes, materialized views. Transactions page - from 4s to 400ms, reports - from 25s+ to ~2s.
+- Implemented an event-driven analytics pipeline on Kafka with the outbox pattern and a relay service for guaranteed processing of payment events. Reduced analytics data delay from one day to tens of seconds.
+- Initiated and led the extraction of notification-service into a separate microservice on FastAPI + RabbitMQ: webhook and email, dead-letter queue, retry with exponential backoff.
+- Implemented monitoring on Prometheus + Grafana with dashboards and alerts - incident detection time was reduced from ~40 minutes to ~3 minutes.
+- Achieved ~65% test coverage on pytest: integration tests for payments, mocks of the external gateway, idempotency and state machine tests.
 Tech stack: Python, Django, DRF, FastAPI, PostgreSQL, Redis, Celery, RabbitMQ, Kafka, Docker, GitLab CI, pytest, Prometheus, Grafana
 
 CIARS - Python Developer
