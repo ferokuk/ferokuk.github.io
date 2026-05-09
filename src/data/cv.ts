@@ -187,7 +187,7 @@ export const cvRu: CvData = {
     location: "Москва, удаленно, гибрид",
     eyebrow: "Python Backend / Финтех / Страхование",
     summary:
-      "Python backend-разработчик с опытом разработки систем в страховании, финтехе и аналитических платформах. Участвовал в создании и развитии сервисов, которые автоматизируют бизнес-процессы, обрабатывают большие объемы данных и обеспечивают стабильную работу продуктовых систем.",
+      "Строю высоконагруженные асинхронные backend-сервисы: антифрод, платежные платформы, ML-скоринг. Ускоряю обработку платежей в разы, повышаю автоматическое выявление мошеннических операций, сокращаю время реакции на инциденты с десятков минут до единиц. Помогаю бизнесу зарабатывать на пропускной способности и меньше терять на фроде и простоях.",
   },
   contacts: [
     {
@@ -365,7 +365,7 @@ export const cvEn: CvData = {
     location: "Moscow, remote or hybrid",
     eyebrow: "Python Backend / Fintech / Insurance",
     summary:
-      "Python backend developer with experience building backend systems in insurance, fintech, and analytics platforms. Contributed to services that automate business processes, process large data volumes, and support stable product systems in production.",
+      "I build high-load asynchronous backend services: antifraud, payment platforms, ML scoring. I speed up payment processing several times over, improve automated detection of fraudulent transactions, and cut incident response time from tens of minutes to single digits. I help the business earn on throughput and lose less to fraud and downtime.",
   },
   contacts: [
     {
