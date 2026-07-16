@@ -1,0 +1,280 @@
+:root {
+  --paper: #ffffff;
+  --paper-soft: #f5f7fa;
+  --text-dark: #0f172a;
+  --muted-dark: #475467;
+  --border-light: #d9e2ef;
+  --blue-dark: #2563eb;
+  --green-dark: #047857;
+  font-family:
+    Arial, Helvetica, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-dark);
+  background: var(--paper-soft);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 0;
+  margin: 0;
+  background: var(--paper-soft);
+}
+
+body {
+  color: var(--text-dark);
+  line-height: 1.45;
+}
+
+a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.resume-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.25rem;
+}
+
+.resume-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  width: min(100%, 860px);
+  margin: 0 auto 1rem;
+}
+
+.resume-toolbar a,
+.resume-toolbar button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.8rem;
+  color: var(--text-dark);
+  background: var(--paper);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resume-toolbar button {
+  color: #ffffff;
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
+
+.resume-document {
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--paper);
+  border: 1px solid var(--border-light);
+}
+
+.resume-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.resume-header h1 {
+  color: var(--text-dark);
+  font-size: clamp(1.8rem, 6vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.resume-header p {
+  margin-top: 0.35rem;
+  color: var(--muted-dark);
+  font-size: 0.98rem;
+}
+
+.resume-header .resume-tagline {
+  color: var(--text-dark);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.resume-section {
+  margin-top: 1.15rem;
+}
+
+.resume-section h2 {
+  margin-bottom: 0.45rem;
+  color: var(--text-dark);
+  font-size: 1.02rem;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.resume-section p,
+.resume-section li {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.resume-lines {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.resume-jobs {
+  display: grid;
+  gap: 1rem;
+}
+
+.resume-job,
+.resume-project {
+  break-inside: avoid;
+}
+
+.resume-job h3,
+.resume-project h3,
+.resume-lines h3 {
+  color: var(--text-dark);
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.resume-job p,
+.resume-project p,
+.resume-lines article p {
+  margin-top: 0.28rem;
+}
+
+.resume-job ul {
+  display: grid;
+  gap: 0.18rem;
+  margin-top: 0.38rem;
+}
+
+@media (max-width: 560px) {
+  .resume-page {
+    padding: 0;
+  }
+
+  .resume-toolbar {
+    padding: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  .resume-document {
+    padding: 1rem;
+    border-right: 0;
+    border-left: 0;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  :root,
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    font-size: 10.2pt;
+    line-height: 1.28;
+  }
+
+  .resume-page {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .resume-toolbar {
+    display: none !important;
+  }
+
+  .resume-document {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    border: 0;
+  }
+
+  .resume-header {
+    padding-bottom: 5mm;
+  }
+
+  .resume-header h1 {
+    font-size: 20pt;
+  }
+
+  .resume-header p,
+  .resume-section p,
+  .resume-section li {
+    font-size: 10.2pt;
+  }
+
+  .resume-header .resume-tagline,
+  .resume-section h2 {
+    font-size: 11pt;
+  }
+
+  .resume-section {
+    margin-top: 4.2mm;
+  }
+
+  .resume-jobs {
+    gap: 4mm;
+  }
+
+  .resume-job,
+  .resume-project,
+  .resume-lines article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-job ul {
+    gap: 0.8mm;
+    margin-top: 1.2mm;
+  }
+}
